@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:attr="http://schemas.android.com/apk/res/com.zsy.frame.sample"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.zsy.frame.sample.control.android.a01ui.a25customview.advance.views.PowerImageView
+        android:id="@+id/image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/a01ui_a25customview_advance_powerimageview_conan"
+        attr:auto_play="false" />
+<!-- 
+    <com.zsy.frame.sample.control.android.a01ui.a25customview.advance.views.PowerImageView
+        android:id="@+id/image_view2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/a01ui_a25customview_advance_powerimageview_anim"
+        attr:auto_play="true" /> -->
+
+</LinearLayout>

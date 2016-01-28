@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/person"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="解析Person数据" />
+
+    <Button
+        android:id="@+id/persons"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="解析List嵌套Person数据" />
+
+    <Button
+        android:id="@+id/liststring"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="解析List嵌套String数据" />
+
+    <Button
+        android:id="@+id/listmap"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="解析ListMap数据" />
+
+    <TextView
+        android:id="@+id/parse_des"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="parse_des" />
+
+</LinearLayout>

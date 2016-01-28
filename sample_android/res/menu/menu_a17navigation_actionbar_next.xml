@@ -1,0 +1,53 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+   <item
+        android:id="@+id/action_share"
+        android:actionProviderClass="android.widget.ShareActionProvider"
+        android:showAsAction="ifRoom"
+        android:title="@string/action_share"/>
+    <item
+        android:id="@+id/action_samy"
+        android:actionProviderClass="com.zsy.frame.sample.control.android.a17navigation.actionbar.widget.MyActionProvider"
+        android:icon="@drawable/ic_stat_android"
+        android:showAsAction="never"
+        android:title="@string/action_samy"/>
+    <item  
+        android:id="@+id/menu_setting"  
+        android:actionProviderClass="com.zsy.frame.sample.control.android.a17navigation.actionbar.widget.SamyActionProvider"  
+        android:showAsAction="never"  
+        android:title="设置">  
+        <menu>  
+            <item  
+                android:id="@+id/menu_theme"  
+                android:actionProviderClass="com.zsy.frame.sample.control.android.a17navigation.actionbar.widget.SamyActionProvider"  
+                android:showAsAction="always|withText"  
+                android:title="更换主题"/>  
+            <item  
+                android:id="@+id/menu_system"  
+                android:actionProviderClass="com.zsy.frame.sample.control.android.a17navigation.actionbar.widget.SamyActionProvider"  
+                android:showAsAction="always|withText"  
+                android:title="系统设置"/>  
+        </menu>  
+    </item>  
+    <item
+        android:id="@+id/menu_search"
+        android:actionViewClass="android.widget.SearchView"
+        android:icon="@drawable/ic_launcher"
+        android:showAsAction="ifRoom|collapseActionView"
+        android:title="@string/action_label_search"/>
+    <!--  android:showAsAction="ifRoom|collapseActionView" -->
+    <!-- 刷新按钮图标 -->
+    <item
+        android:id="@+id/menu_refresh"
+        android:icon="@drawable/ic_menu_refresh_holo_light"
+        android:showAsAction="never"
+        android:title="@string/action_label_refresh"/>
+
+    <!-- 收藏按钮图标加文字 -->
+    <item
+        android:id="@+id/menu_collected"
+        android:icon="@drawable/ic_menu_star_holo_light"
+        android:showAsAction="never"
+        android:title="@string/action_label_collected"/>
+    <!-- android:showAsAction="ifRoom|withText" -->
+
+</menu>

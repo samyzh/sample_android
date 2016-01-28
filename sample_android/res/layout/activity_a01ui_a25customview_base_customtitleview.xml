@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res/com.zsy.frame.sample"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- 如果自定义控件中，有自定义属性设置时，必须得引入下面这两句话 -->
+    <!--  一定要引入    xmlns:tools="http://schemas.android.com/tools"-->
+    <!-- 一定要引入 xmlns:custom="http://schemas.android.com/apk/res/com.zsy.frame.sample"我们的命名空间，后面的包路径指的是项目的package -->
+    <!-- custom对应下面的名字： custom:titleText -->
+
+    <com.zsy.frame.sample.control.android.a01ui.a25customview.base.views.CustomTitleView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="10dp"
+        custom:titleText="3712"
+        custom:titleTextColor="#ff00ff"
+        custom:titleTextSize="40sp" />
+    <!-- 默认情况下为16sp -->
+    <!-- custom:titleTextSize="40sp" /> -->
+
+</RelativeLayout>

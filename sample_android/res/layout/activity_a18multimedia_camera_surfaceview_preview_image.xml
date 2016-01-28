@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:gravity="center"  >
+
+
+    <ImageView
+        android:id="@+id/previewimage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/preview_control_bg" 
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="取消"
+            android:textColor="@color/white"
+            android:textSize="16dp" 
+            android:layout_marginLeft="30dp"
+            android:padding="20dp"
+            />
+
+        <TextView
+            android:id="@+id/use_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="使用"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            android:layout_marginRight="30dp"
+            android:padding="20dp" />
+    </RelativeLayout>
+
+</LinearLayout>

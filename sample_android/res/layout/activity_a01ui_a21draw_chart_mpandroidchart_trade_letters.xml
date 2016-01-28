@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/trade_letter_root_ll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/pic_all_round_corner_white"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/trade_letter_tv"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:background="@drawable/a01ui_a21draw_chart_mpandroidchart_trade_letter_top_corner"
+        android:gravity="center"
+        android:text="拼宝交易快报"
+        android:textColor="#333333"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/todays_sales_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="￥326.895\n今日销售额"
+            android:textColor="#ff7815"
+            android:textSize="9sp" />
+
+        <TextView
+            android:id="@+id/yesterday_sales_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="昨日销售额"
+            android:textColor="#ff7815"
+            android:textSize="9sp" />
+
+        <TextView
+            android:id="@+id/this_month_sales_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="本月销售额"
+            android:textColor="#ff7815"
+            android:textSize="9sp" />
+
+        <TextView
+            android:id="@+id/total_sales_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="累计销售额"
+            android:textColor="#ff7815"
+            android:textSize="9sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#dcdcde" />
+
+    <TextView
+        android:id="@+id/in_recent_7_tv"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:gravity="center"
+        android:text="最近七日"
+        android:textColor="#333333"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/amount_of_units_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:text="金额：(元)"
+        android:textColor="#333333"
+        android:textSize="10sp" />
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/trade_letters_lc"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="15dp" />
+
+</LinearLayout>

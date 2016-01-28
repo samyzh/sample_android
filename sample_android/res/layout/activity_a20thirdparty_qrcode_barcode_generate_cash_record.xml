@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sample="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#dadada"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/common_top_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#38ad7a"
+        android:gravity="center_vertical" >
+
+        <ImageButton
+            android:id="@+id/btn_head_left"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true" />
+
+        <ImageButton
+            android:id="@+id/btn_head_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="3dp"
+            android:background="@null"
+            android:src="@drawable/a20thirdparty_qrcode_barcode_generate_btn_icon_refresh_selector" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="45dp"
+                android:text="给惠信顾客扫一扫完成线下收银"
+                android:textColor="#666666"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/qr_show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="55dp"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_launcher" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/a20thirdparty_qrcode_barcode_generate_order_my_account_bg" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center_vertical"
+                    android:text="收银记录"
+                    android:textColor="#34986c"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/find_more_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentRight="true"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:paddingLeft="25dp"
+                    android:text="查看更多"
+                    android:textColor="#969696"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <com.zsy.frame.sample.control.android.a20thirdparty.qrcode.views.SampleListLinearLayout
+                android:id="@+id/lv_record"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                sample:needDivider="false" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

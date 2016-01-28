@@ -1,0 +1,1109 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zsy.frame.sample"
+    android:versionCode="100"
+    android:versionName="1.0.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="21" />
+    <!-- 应用程序用到低功耗蓝牙通讯特性 -->
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="false" />
+
+    <!-- 允许应用使用网络上报数据 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 获取WIFI信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 读取设备ID作为设备标识 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 添加对通讯录的读写操作 -->
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- 读取设备的电池状态 -->
+    <uses-permission android:name="android.permission.BATTERY_STATS" />
+    <!-- 写SD权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 获取系统日志 -->
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- 发送粘性广播权限 -->
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <!-- 开机启动权限 ,现用于广播接收 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- 短信获取权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <!-- 获取任务堆栈 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- 使用蓝牙的响应权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!-- 相机拍照相关权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <!-- 现测试数据库用例用到的配置1 -->
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:targetPackage="com.zsy.frame.sample" >
+    </instrumentation>
+
+    <!-- android:hardwareAccelerated="true"  在自定义播放gif图片是用到，硬件加速请求,现在处理的是直接放在用到的Activity配置 -->
+    <!--
+   　如果你的应用在全局启用硬加速时行为不正确，你可以对个别activities单独启用硬加速．
+    欲在actvity级别启用或禁止硬加速，你可以对<activity>元素使用android:hardwareAccelerated属性
+    -->
+    <application
+        android:name="com.zsy.frame.sample.GlobalApp"
+        android:allowBackup="true"
+        android:exported="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:persistent="true"
+        android:theme="@style/CustomTheme" >
+
+        <!-- android:theme="@style/AppTheme" > -->
+
+
+        <!-- 现测试数据库用例用到的配置2 -->
+        <uses-library android:name="android.test.runner" />
+        <!-- 友盟统计分析 -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="54c11643fd98c5c255000d11" >
+        </meta-data>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Wandoujia" />
+        <!-- 四大组件之Service注册部分 -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:permission="android.permission.BAIDU_LOCATION_SERVICE"
+            android:process=":remote"
+            android:stopWithTask="true" >
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v2.9" >
+                </action>
+            </intent-filter>
+        </service>
+        <service android:name="com.zsy.frame.sample.control.android.a06fourcomponents.service.base.HandlerMessageService" />
+        <service android:name="com.zsy.frame.sample.control.android.a06fourcomponents.service.base.OnTransactMessageService" />
+        <service android:name="com.zsy.frame.sample.control.android.a06fourcomponents.service.base.DownLoadBindingService" />
+        <service android:name="com.zsy.frame.sample.control.android.a06fourcomponents.service.base.DownLoadIntentServicervice" />
+        <service android:name="com.zsy.frame.sample.control.android.a06fourcomponents.service.base.DownLoadService" />
+        <!-- 注册服务,通过启动服务去启动IPC服务 -->
+        <service android:name="com.zsy.frame.sample.control.android.a06fourcomponents.service.ipc.server.ServerService" >
+            <intent-filter>
+                <action android:name="com.zsy.service.ipc.data.IDataService" />
+                <!-- 可能这里是没有加隐式意图导致接收不到信息 -->
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.zsy.frame.sample.control.android.a06fourcomponents.service.ipc.server.MyBindServices"
+            android:exported="true" >
+            <intent-filter>
+
+                <!-- 这样便于隐式意图调用,现在已发现这个绑定还有问题，但是单独的APP操作时没有问题 -->
+                <action android:name="com.zsy.frame.sample.control.android.a06fourcomponents.service.ipc.server.MyBindServices" />
+                <!-- <action android:name="com.zsy.service.ipc.service.MyBindServices" > -->
+            </intent-filter>
+        </service>
+
+        <!-- 蓝牙聊天服务 -->
+        <service android:name="com.zsy.frame.sample.control.android.a26setting.bluetooth.projects.chat.utils.BluetoothClientService" />
+        <service android:name="com.zsy.frame.sample.control.android.a26setting.bluetooth.projects.chat.utils.BluetoothServerService" />
+        <service android:name="com.zsy.frame.sample.control.android.a26setting.bluetooth.projects.bloodpressure.helps.BluetoothLeService" />
+
+        <!-- 四大组件之broadcastreceiver注册部分 ，静态注册的广播一般会涉及到系统的权限问题，得记得加权限 -->
+        <!-- BroadcastReceiver的安全性简介 -->
+        <!-- 对于动态注册的广播可以通过类似registerReceiver(BroadcastReceiver, IntentFilter, String, android.os.Handler)的接口指定发送者必须具备的permission ， -->
+        <!-- 对于静态注册的广播可以通过android:exported="false"属性 表示接收者对外部应用程序不可用，即不接受来自外部的广播。 -->
+        <receiver android:name="com.zsy.frame.sample.control.android.a06fourcomponents.broadcastreceiver.MyInstalledReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <!--  -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.zsy.frame.sample.control.android.a06fourcomponents.broadcastreceiver.BatteryInfoBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.zsy.frame.sample.control.android.a06fourcomponents.broadcastreceiver.SMSReceiver" >
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 优先级的设定one<two，优先级的范围-1000~1000 -->
+        <receiver android:name="com.zsy.frame.sample.control.android.a06fourcomponents.broadcastreceiver.OrderedBroadcastReceiverOne" >
+            <intent-filter android:priority="999" >
+                <action android:name="com.zsy.frame.sample.control.android.a06fourcomponents.broadcastreceiver.OrderedBroadcast.test" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.zsy.frame.sample.control.android.a06fourcomponents.broadcastreceiver.OrderedBroadcastReceiverTwo" >
+            <intent-filter android:priority="1000" >
+                <action android:name="com.zsy.frame.sample.control.android.a06fourcomponents.broadcastreceiver.OrderedBroadcast.test" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Widget -->
+        <receiver android:name="com.zsy.frame.sample.control.android.a19imagemechanism.imageloader.widget.UILWidgetProvider" >
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/xml_a19imagemechanism_imageloader_widget_provider" />
+
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 四大组件之contentproviders注册部分 -->
+        <provider
+            android:name="com.zsy.frame.sample.control.android.a06fourcomponents.contentproviders.base.provider.BaseCPProvider"
+            android:authorities="com.zsy.tc.PersonContentProvider" >
+        </provider>
+
+        <!-- 四大组件之activity注册部分 -->
+        <!-- 第一种情况：有MAIN,无LAUNCHER，程序列表中无图标原因：android.intent.category.LAUNCHER决定应用程序是否显示在程序列表里 -->
+        <!-- 第二种情况：无MAIN,有LAUNCHER，程序列表中无图标原因：android.intent.action.MAIN决定应用程序最先启动的Activity，如果没有Main，则不知启动哪个Activity，故也不会有图标出现 -->
+        <!-- android.intent.action.MAIN决定应用程序最先启动的;Activity android.intent.category.LAUNCHER决定应用程序是否显示在程序列表里 -->
+        <activity
+            android:name="com.zsy.frame.sample.control.base.SYFrameMainAct"
+            android:label="@string/app_name" >
+            <intent-filter>
+
+                <!-- android.intent.action.MAIN决定应用程序最先启动的Activity -->
+                <action android:name="android.intent.action.MAIN" />
+                <!-- 程序的入口android.intent.category.LAUNCHER决定应用程序是否显示在程序列表里. -->
+                <!-- 所谓Launcher,是指管理桌面的程序.Lanucher列表是指在桌面中显示的应用的列表. -->
+                <!--
+    因为你的程序可能有很多个activity只要xml配置文件中有这么一个intent-filter，而且里面有这个launcher，那么这个activity就是点击程序时最先运行的那个activity。
+    现在你只有一个activity，那么加不加就没有关系了。用于模拟器启动时设置为默认打开为的activity
+                -->
+                <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+                <category android:name="android.intent.category.LAUNCHER" />
+                <!-- 同时在的时候，该Acticity才能显示在程序列表里 -->
+                <!--
+第一种情况：有MAIN,无LAUNCHER，程序列表中无图标
+原因：android.intent.category.LAUNCHER决定应用程序是否显示在程序列表里 
+第二种情况：无MAIN,有LAUNCHER，程序列表中无图标
+原因：android.intent.action.MAIN决定应用程序最先启动的Activity，如果没有Main，则不知启动哪个Activity，故也不会有图标出现
+                -->
+            </intent-filter>
+        </activity>
+
+        <!-- android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" 预留启动界面加入 -->
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a03textview.HtmlTextViewAct"
+            android:label="@string/android.a01ui.a03textview.HtmlTextViewAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a07viewpager.JazzyViewPagerAct"
+            android:label="@string/android.a01ui.a07viewpager.JazzyViewPagerAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a07viewpager.JellyViewPagerAct"
+            android:label="@string/android.a01ui.a07viewpager.JellyViewPagerAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a08listview.activity.ShopEvaluateAct"
+            android:label="@string/android.a01ui.a08listview.activity.ShopEvaluateAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a08listview.activity.JazzyListViewMainAct"
+            android:label="@string/android.a01ui.a08listview.JazzyListViewMainAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a08listview.activity.JazzyListViewGridAct"
+            android:label="@string/android.a01ui.a08listview.JazzyListViewGridAct" >
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a08listview.activity.JazzyListViewListAct"
+            android:label="@string/android.a01ui.a08listview.JazzyListViewListAct" >
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a08listview.multi.MultiListviewAct"
+            android:label="@string/android.a01ui.a08listview.multi.MultiListviewAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a08listview.multi.BaseMulAct"
+            android:label="@string/android.a01ui.a08listview.multi.BaseMulAct" >
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a12gallery.ui.Gallery3DAct"
+            android:label="@string/android.a01ui.a12gallery.ui.Gallery3DAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a14pickers.datepicker.EffectDatetimepickerAct"
+            android:label="@string/android.a01ui.a14pickers.datepicker.EffectDatetimepickerAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a15dialog.NiftydialogeffectsAct"
+            android:label="@string/android.a01ui.a15dialog.NiftydialogeffectsAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a19progress.SmoothProgressBarAct"
+            android:label="@string/android.a01ui.a19progress.SmoothProgressBarAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a19progress.SmoothProgressBarNextAct"
+            android:label="@string/android.a01ui.a19progress.SmoothProgressBarNextAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a19progress.CircleProgressAct"
+            android:label="@string/android.a01ui.a19progress.CircleProgressAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a19progress.CircleProgressViewPagerAct"
+            android:label="@string/android.a01ui.a19progress.CircleProgressViewPagerAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a19progress.NumberProgressBarAct"
+            android:label="@string/android.a01ui.a19progress.NumberProgressBarAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a20animation.base.TweenAnimationAct"
+            android:label="@string/android.a01ui.a20animation.base.TweenAnimationAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a21draw_chart.mpandroidchart.TradelettersAct"
+            android:label="@string/android.a01ui.a21draw_chart.mpandroidchart.TradelettersAct"
+            android:theme="@style/suspension_activity_style" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a21draw_chart.mpandroidchart.LineChartAct"
+            android:label="@string/android.a01ui.a21draw_chart.mpandroidchart.LineChartAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a21draw_chart.achartengine.BarPieChartAct"
+            android:label="@string/android.a01ui.a21draw_chart.achartengine.BarPieChartAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity android:name="org.achartengine.GraphicalActivity" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a21draw_chart.ownpaint.BodyDataContentAct"
+            android:label="@string/android.a01ui.a21draw_chart.ownpaint.BodyDataContentAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a21draw_chart.ownpaint.BodyDataHistoryAct"
+            android:label="@string/android.a01ui.a21draw_chart.ownpaint.BodyDataHistoryActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a22notification.NiftyNotificationAct"
+            android:label="@string/android.a01ui.a22notification.NiftyNotificationAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a22notification.NiftyNotificationAdvanceAct"
+            android:label="@string/android.a01ui.a22notification.NiftyNotificationAdvanceAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a22notification.crouton.CroutonDemo"
+            android:label="@string/android.a01ui.a22notification.crouton.CroutonDemo" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a24materialdesign.MaterialDesignMainAct"
+            android:label="@string/android.a01ui.a24materialdesign.MaterialDesignMainAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.zsy.frame.sample.control.android.a01ui.a24materialdesign.MaterialDesignButtonsAct" />
+        <activity android:name="com.zsy.frame.sample.control.android.a01ui.a24materialdesign.MaterialDesignProgressAct" />
+        <activity android:name="com.zsy.frame.sample.control.android.a01ui.a24materialdesign.MaterialDesignSwitchAct" />
+        <activity android:name="com.zsy.frame.sample.control.android.a01ui.a24materialdesign.MaterialDesignWidgetAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a25customview.base.CustomviewBaseAct"
+            android:label="@string/android.a01ui.a25customview.base.CustomviewBaseAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a25customview.base.CustomTitleViewAct"
+            android:label="@string/android.a01ui.a25customview.base.CustomTitleViewAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a25customview.base.CustomImageTextViewAct"
+            android:label="@string/android.a01ui.a25customview.base.CustomImageTextViewAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a25customview.base.CustomProgressBarAct"
+            android:label="@string/android.a01ui.a25customview.base.CustomProgressBarAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a25customview.base.CustomVolumControlBarAct"
+            android:label="@string/android.a01ui.a25customview.base.CustomVolumControlBarAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a25customview.base.CustomImageViewAct"
+            android:label="@string/android.a01ui.a25customview.base.CustomImageViewAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a25customview.advance.PedometerAct"
+            android:label="@string/android.a01ui.a25customview.advance.PedometerAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a25customview.advance.RoundProgressBarAct"
+            android:label="@string/android.a01ui.a25customview.advance.RoundProgressBarAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a25customview.advance.PowerImageViewAct"
+            android:hardwareAccelerated="true"
+            android:label="@string/android.a01ui.a25customview.advance.PowerImageViewAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a27refresh.acitionbarptr.AcitionbarptrMainAct_"
+            android:label="@string/android.a01ui.a27refresh.acitionbarptr.AcitionbarptrMainAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a27refresh.acitionbarptr.ListViewActivity"
+            android:label="@string/android.a01ui.a27refresh.acitionbarptr.ListViewActivity"
+            android:theme="@android:style/Theme.Holo.Light" />
+        <!--
+             <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a27refresh.ListViewWithEmptyActivity"
+            android:label="@string/android.a01ui.a27refresh.acitionbarptr.ListViewWithEmptyActivity" />
+        -->
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a27refresh.acitionbarptr.ScrollViewActivity"
+            android:label="@string/android.a01ui.a27refresh.acitionbarptr.ScrollViewActivity"
+            android:theme="@style/Theme.Holo.CustomPtrHeader" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a27refresh.acitionbarptr.GridViewActivity"
+            android:label="@string/android.a01ui.a27refresh.acitionbarptr.GridViewActivity"
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a27refresh.acitionbarptr.WebViewActivity"
+            android:label="@string/android.a01ui.a27refresh.acitionbarptr.WebViewActivity" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a27refresh.acitionbarptr.FragmentTabsActivity"
+            android:label="@string/android.a01ui.a27refresh.acitionbarptr.FragmentTabsActivity"
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a06fourcomponents.activity.StartMethodAct"
+            android:label="@string/android.a06fourcomponents.activity.StartMethodAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a06fourcomponents.activity.StartMethodTestAAct"
+            android:label="@string/android.a06fourcomponents.activity.StartMethodTestAAct" />
+        <!-- android:launchMode="standard" -->
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a06fourcomponents.activity.StartMethodTestBAct"
+            android:label="@string/android.a06fourcomponents.activity.StartMethodTestBAct"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a06fourcomponents.activity.StartMethodTestCAct"
+            android:label="@string/android.a06fourcomponents.activity.StartMethodTestCAct"
+            android:launchMode="singleTask" />
+        <!-- android:taskAffinity="android.a06fourcomponents.activity.StartMethodTestCAct" -->
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a06fourcomponents.activity.StartMethodTestDAct"
+            android:label="@string/android.a06fourcomponents.activity.StartMethodTestDAct"
+            android:launchMode="singleInstance" />
+        <!-- android:taskAffinity="android.a06fourcomponents.activity.StartMethodTestDAct" -->
+        <!-- android:launchMode="singleInstance" -->
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a06fourcomponents.service.base.OnTransactMessageAct"
+            android:label="@string/android.a06fourcomponents.service.base.OnTransactMessageAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a06fourcomponents.broadcastreceiver.InstallAndBootCompletedAct"
+            android:label="@string/android.a06fourcomponents.broadcastreceiver.InstallAndBootCompletedAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a06fourcomponents.broadcastreceiver.BatteryInfoAct"
+            android:label="@string/android.a06fourcomponents.broadcastreceiver.BatteryInfoAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a06fourcomponents.broadcastreceiver.BaseBroadcastAct"
+            android:label="@string/android.a06fourcomponents.broadcastreceiver.BaseBroadcastAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a06fourcomponents.broadcastreceiver.StickBroadcastNextAct"
+            android:label="@string/android.a06fourcomponents.broadcastreceiver.StickBroadcastNextAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a06fourcomponents.contentproviders.base.provider.BaseCPAct"
+            android:label="@string/android.a06fourcomponents.contentproviders.base.provider.BaseCPAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a06fourcomponents.contentproviders.base.provider.UpdateCPAct"
+            android:label="@string/android.a06fourcomponents.contentproviders.base.provider.UpdateCPAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a06fourcomponents.contentproviders.contacts.CPLoaderAct"
+            android:label="@string/android.a06fourcomponents.contentproviders.contacts.CPLoaderAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a06fourcomponents.contentproviders.contacts.LoaderSysContactAct"
+            android:label="@string/android.a06fourcomponents.contentproviders.contacts.LoaderSysContactAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a06fourcomponents.service.base.HandlerMessageAct"
+            android:label="@string/android.a06fourcomponents.service.base.HandlerMessageAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a06fourcomponents.service.base.BaseServiceDownLoadImgAct"
+            android:label="@string/android.a06fourcomponents.service.base.BaseServiceDownLoadImgAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a06fourcomponents.service.ipc.client.BaseClientAct"
+            android:label="@string/android.a06fourcomponents.service.ipc.client.BaseClientAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a06fourcomponents.service.ipc.server.BaseServerIpcAct"
+            android:label="@string/android.a06fourcomponents.service.ipc.server.BaseServerIpcAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a07datastore.database.sqlite.base.BaseOperationDBAct"
+            android:label="@string/android.a07datastore.database.sqlite.base.BaseOperationDBAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a07datastore.database.sqlite.serverloader.ServerloaderAct"
+            android:label="@string/android.a07datastore.database.sqlite.serverloader.ServerloaderAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a07datastore.database.greendao.ChoiceProvienceActivity"
+            android:label="@string/android.a07datastore.database.greendao.ChoiceProvienceActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a08net.parse.JsoapHtmlAct"
+            android:label="@string/android.a08net.parse.JsoapHtmlAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a08net.parse.JsonParseAct"
+            android:label="@string/android.a08net.parse.JsonParseAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a08net.parse.XMLParseAct"
+            android:label="@string/android.a08net.parse.XMLParseAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a08net.protocol.soap.SoapWeatherMainAct"
+            android:label="@string/android.a08net.protocol.soap.SoapWeatherMainAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a08net.protocol.soap.CityAct"
+            android:label="@string/android.a08net.protocol.soap.CityAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a08net.protocol.soap.WeatherAct"
+            android:label="@string/android.a08net.protocol.soap.WeatherAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a12threadmessage.base.MessageRunnableAct"
+            android:label="@string/android.a12threadmessage.base.MessageRunnableAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a12threadmessage.thread.InterThreadCommAct"
+            android:label="@string/android.a12threadmessage.thread.InterThreadCommAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a14html5.webview.WebViewLoadingStyle"
+            android:label="@string/android.a14html5.webview.WebViewLoadingStyle" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a14html5.webview.WebViewJsMutual"
+            android:label="@string/android.a14html5.webview.WebViewJsMutual" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a17navigation.actionbar.activity.ActionbarMainAct"
+            android:label="@string/android.a17navigation.actionbar.activity.ActionbarMainAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a17navigation.actionbar.activity.BadgeAct"
+            android:label="@string/android.a17navigation.actionbar.activity.BadgeAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a17navigation.actionbar.activity.NextTabsAct"
+            android:label="@string/android.a17navigation.actionbar.activity.NextTabsAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a17navigation.actionbar.activity.SpinnerTabsAct"
+            android:label="@string/android.a17navigation.actionbar.activity.SpinnerTabsAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a18multimedia.camera.TakePhotoBySurfaceviewAct"
+            android:label="@string/android.a18multimedia.camera.TakePhotoBySurfaceviewAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a18multimedia.camera.SurfaceViewPictureViewAct"
+            android:label="@string/android.a18multimedia.camera.SurfaceViewPictureViewAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a19imagemechanism.imageloader.activity.ImageloaderHomeAct"
+            android:label="@string/android.a19imagemechanism.imageloader.activity.ImageloaderHomeAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a19imagemechanism.imageloader.activity.SimpleImageAct"
+            android:label="@string/android.a19imagemechanism.imageloader.activity.SimpleImageAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a19imagemechanism.imageloader.activity.ComplexImageActivity"
+            android:label="@string/android.a19imagemechanism.imageloader.activity.ComplexImageAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a19imagemechanism.volley.activity.VolleyHomeAct"
+            android:label="@string/android.a19imagemechanism.volley.activity.VolleyHomeAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a19imagemechanism.volley.activity.VolleyRequestAct"
+            android:label="@string/android.a19imagemechanism.volley.activity.VolleyRequestAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a19imagemechanism.volley.activity.VolleyAboutAct"
+            android:label="@string/android.a19imagemechanism.volley.activity.VolleyAboutAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a20thirdparty.androidannotations.AAMainAct_"
+            android:label="@string/android.a20thirdparty.androidannotations.AAMainAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a20thirdparty.androidannotations.AAWithExtraAct_"
+            android:label="@string/android.a20thirdparty.androidannotations.AAWithExtraAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a20thirdparty.androidannotations.AAListAct_"
+            android:label="@string/android.a20thirdparty.androidannotations.AAListAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a20thirdparty.eventbus.ui.EventBusTestMainAct"
+            android:label="@string/android.a20thirdparty.eventbus.EventBusTestMainAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a20thirdparty.eventbus.ui.SecondAct"
+            android:label="@string/android.a20thirdparty.eventbus.SecondAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a20thirdparty.qrcode.BarCodeCaptureAct"
+            android:label="@string/android.a20thirdparty.qrcode.BarCodeCaptureAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.zsy.frame.sample.control.android.a20thirdparty.qrcode.MipcaCaptureAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a20thirdparty.qrcode.QRCodeScanMainAct"
+            android:label="@string/android.a20thirdparty.qrcode.QRCodeScanMainAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a20thirdparty.qrcode.EcodeingProductAct"
+            android:label="@string/android.a20thirdparty.qrcode.EcodeingProductAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a20thirdparty.qrcode.BarCodeGenerateAct"
+            android:label="@string/android.a20thirdparty.qrcode.BarCodeGenerateAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a20thirdparty.qq.SkipQQChatAct"
+            android:label="@string/android.a20thirdparty.qq.SkipQQChatAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <!-- 分享部分 -->
+        <activity
+            android:name="cn.sharesdk.framework.ShareSDKUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+
+            <!--
+            	如果集成QQ分享，或者使用QQ客户端来进行QQ空间的分享，须要在此处添加一个对ACTION_VIEW
+            	事件的过滤器，其中的scheme是“tencent”前缀再开发者应用的加上appId。如果此过滤器不设置，
+            	则分享结束以后不能得到正确的回调
+            -->
+            <intent-filter>
+                <data android:scheme="tencent1103542703" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- 由于用到微信分享和支付，尽量保持微信app-id保持一致：wx50268e3aff4bd560 -->
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a20thirdparty.pay.wx.WXPayActivity"
+            android:exported="true"
+            android:label="@string/android.a20thirdparty.pay.wx.PayActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="wx50268e3aff4bd560" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:label="@string/wxapi.WXPayEntryActivity"
+            android:launchMode="singleTop" />
+
+        <receiver android:name="com.zsy.frame.sample.control.android.a20thirdparty.pay.wx.AppRegister" >
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a22operationprocess.rootcommand.SimulateInputAct"
+            android:label="@string/android.a22operationprocess.rootcommand.SimulateInputAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a26setting.bluetooth.base.BTBaseAct"
+            android:label="@string/android.a26setting.bluetooth.base.BTBaseAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a26setting.bluetooth.base.BTPairConnectAct"
+            android:label="@string/android.a26setting.bluetooth.base.BTPairConnectAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <!-- android:theme="@android:style/Theme.WithActionBar" -->
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a26setting.bluetooth.projects.chat.BTChatMainAct"
+            android:label="@string/android.a26setting.bluetooth.projects.chat.BTChatMainAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.zsy.frame.sample.control.android.a26setting.bluetooth.projects.chat.BTChatClientAct" />
+        <activity android:name="com.zsy.frame.sample.control.android.a26setting.bluetooth.projects.chat.BTChatServerAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a26setting.bluetooth.ble.BLEMainAct"
+            android:label="@string/android.a26setting.bluetooth.ble.BLEMainAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a26setting.bluetooth.ble.BLEBaseAct"
+            android:label="@string/android.a26setting.bluetooth.ble.BLEBaseAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a26setting.bluetooth.ble.BLEPeripheryAct"
+            android:label="@string/android.a26setting.bluetooth.ble.BLEPeripheryAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a26setting.bluetooth.ble.BLECentralAct"
+            android:label="@string/android.a26setting.bluetooth.ble.BLECentralAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a26setting.bluetooth.projects.gatt.GattScanMainAct"
+            android:label="@string/android.a26setting.bluetooth.projects.gatt.GattScanMainAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a26setting.bluetooth.projects.gatt.HeartRateAct"
+            android:label="@string/android.a26setting.bluetooth.projects.gatt.HeartRateAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a26setting.bluetooth.projects.gatt.PeripheralAct"
+            android:label="@string/android.a26setting.bluetooth.projects.gatt.PeripheralAct"
+            android:parentActivityName="com.zsy.frame.sample.control.android.a26setting.bluetooth.projects.gatt.GattScanMainAct" >
+
+            <!-- Attribute "parentActivityName" is only used in API level 16 and higher (current min is 14)目前这个返回事件还有问题 -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.bluetooth.bledemo.ScanningActivity" />
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a26setting.bluetooth.projects.bloodpressure.ui.BloodPressureAct"
+            android:label="@string/android.a26setting.bluetooth.projects.bloodpressure.BloodPressureAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a26setting.bluetooth.projects.printer.BluetoothPrinterAct"
+            android:label="@string/android.a26setting.bluetooth.projects.printer.BluetoothprinterAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a26setting.bluetooth.projects.printer.PrintDataAct"
+            android:label="@string/android.a26setting.bluetooth.projects.printer.PrintDataAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a26setting.wifi.base.WifiBaseAct"
+            android:label="@string/android.a26setting.wifi.base.WifiBaseAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a26setting.wifi.projects.wifiqr.WifiCaptureMainAct"
+            android:label="@string/android.a26setting.wifi.projects.wifiqr.WifiCaptureMainAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a26setting.wifi.projects.wifiqr.GenerateWifiQRAct"
+            android:label="@string/android.a26setting.wifi.projects.wifiqr.GenerateWifiQRAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a26setting.wifi.projects.wifiqr.WifiCaptureAct"
+            android:label="@string/android.a26setting.wifi.projects.wifiqr.WifiCaptureAct" />
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a26setting.cloud.printer.CloudPrinterTestAct"
+            android:label="@string/android.a26setting.cloud.printer.CloudPrinterTestAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a26setting.cloud.printer.PrintHtmlOffScreenAct"
+            android:label="@string/android.a26setting.cloud.printer.PrintHtmlOffScreenAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a30designmode.mvp.ui.MvpAct_"
+            android:label="@string/android.a30designmode.mvp.ui.MvpAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

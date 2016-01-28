@@ -1,0 +1,20 @@
+{
+    "rs": {
+        "LLResult": null,
+        "YLResult": null,
+        "WangYinUrl": null,
+        "orderNumber": "10059145",
+        "weixinPay": {
+            "orderNo": "42694",
+            "appid": "wx50268e3aff4bd560",
+            "partnerid": "1246753901",
+            "prepayid": "wx20150630112239b8c5c01fc30310560828",
+            "wxPackage": "Sign=WXPay",
+            "noncestr": "fe5553d4e01f41bcbf7514ce7e27dee0",
+            "timestamp": "1435634559",
+            "sign": "0E6168DF0A372E539D32F9F453E8D395"
+        }
+    },
+    "flag": 1,
+    "msg": "通过"
+}

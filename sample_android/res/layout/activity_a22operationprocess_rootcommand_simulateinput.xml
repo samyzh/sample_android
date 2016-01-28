@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="为了方便看到运行结果，\n建议先到Android系统的 &apos;设置&apos;->&apos;开发者选项&apos;->勾上&apos;显示触摸操作&apos;和&apos;指针位置&apos;" />
+
+            <Button
+                android:id="@+id/btnTestKey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="模拟按下Home键" />
+
+            <Button
+                android:id="@+id/btnTestSwipe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="模拟滑动触摸屏" />
+
+            <Button
+                android:id="@+id/btnTestTap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="模拟点击触摸屏" />
+
+            <Button
+                android:id="@+id/btnExit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="退出程序" />
+
+            <Button
+                android:id="@+id/restart_test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="启动测试apk" />
+
+            <Button
+                android:id="@+id/command_ps_show_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="查看直接运行ps命令的结果" />
+
+            <TextView
+                android:id="@+id/show_ps_detail_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ps结果为：" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

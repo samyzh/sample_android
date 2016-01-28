@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_common_bg"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/rl_title"
+        layout="@layout/base_common_center_small_titlebar" />
+
+    <RelativeLayout
+        android:id="@+id/total_rl_number"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="@color/white"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp" >
+
+        <TextView
+            android:id="@+id/comment_count_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="总评分 0.0"
+            android:textColor="#282828"
+            android:textSize="14sp" />
+
+        <RatingBar
+            android:id="@+id/average_comment_level_rb"
+            style="@style/MySmallRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/comment_count_tv"
+            android:isIndicator="true"
+            android:rating="0"
+            android:stepSize="1.0" />
+    </RelativeLayout>
+
+    <com.handmark.pulltorefresh.library.pinnedheader.PinnedHeaderPullRefreshListView
+        xmlns:auto="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/shop_evaluate_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="#00000000"
+        android:divider="#DFDFE0"
+        android:dividerHeight="0.5dp"
+        android:fadingEdge="none"
+        android:listSelector="@android:color/transparent"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:smoothScrollbar="true"
+        android:stackFromBottom="false"
+        android:transcriptMode="disabled"
+        auto:ptrAnimationStyle="rotate"
+        auto:ptrMode="both" />
+
+</LinearLayout>

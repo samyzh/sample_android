@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/evaluteHeaderTv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffeef1f1"
+    android:gravity="center_vertical"
+    android:paddingBottom="7dp"
+    android:paddingLeft="15dp"
+    android:paddingTop="7dp"
+    android:text="第三期评价(23条)"
+    android:textColor="#ff969696"
+    android:textSize="12sp" />

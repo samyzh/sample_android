@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.zsy.frame.sample.control.android.a01ui.a12gallery.views.Gallery3D
+        android:id="@+id/devices_management_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:spacing="0dip" />
+
+    <com.zsy.frame.sample.control.android.a01ui.a12gallery.views.MarqueeText
+        android:id="@+id/devices_management_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true" />
+    <!-- android:tag="resize|-1|-1|0|0|0|0|0.083" -->
+
+</LinearLayout>

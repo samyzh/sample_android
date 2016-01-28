@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+<!-- 
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
+         <item name="android:windowNoTitle">false</item>
+            SmoothProgressBar
+        <item name="spbStyle">@style/SmoothProgressBar</item>
+        <item name="cpbStyle">@style/CircularProgressBar</item>
+        如果仅仅想扩展背景样式到系统栏下，设置fitsSystemWindows为true会增加视图的Padding值让你的布局恢复正常大小，并且可以把背景扩大。
+        <item name="android:fitsSystemWindows">true</item>
+        最上方的状态栏 (Status Bar)
+        <item name="android:windowTranslucentStatus">true</item>
+        最下方的导航栏 (Navigation Bar) 可以被透明化
+        <item name="android:windowTranslucentNavigation">false</item>
+    </style> -->
+
+</resources>

@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MvpAct" >
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="load_data"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/id_edt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_info"
+        android:layout_below="@+id/bt"
+        android:layout_marginTop="21dp"
+        android:hint="id"
+        android:ems="10" >
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/first_name_edt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/id_edt"
+        android:layout_below="@+id/id_edt"
+        android:layout_marginTop="18dp"
+        android:hint="first_name"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/last_name_edt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/first_name_edt"
+        android:layout_below="@+id/first_name_edt"
+        android:layout_marginTop="34dp"
+        android:hint="last_name"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/loadButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/saveButton"
+        android:layout_alignBottom="@+id/saveButton"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="64dp"
+        android:text="load" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/id_edt"
+        android:layout_below="@+id/bt"
+        android:text="另外添加情况显示逻辑" />
+
+    <Button
+        android:id="@+id/bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/tv_info"
+        android:layout_marginTop="52dp"
+        android:padding="30dp"
+        android:text="\t\tLoad Data\t\t" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/last_name_edt"
+        android:layout_below="@+id/last_name_edt"
+        android:layout_marginTop="18dp"
+        android:text="save" />
+
+</RelativeLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/a26setting_bluetooth_projects_bloodpressure_blood_bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="11dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/bpd_idTv"
+            android:layout_width="110dp"
+            android:layout_height="34dp"
+            android:textSize="15dp"
+            android:background="@drawable/a01ui_a21draw_chart_ownpaint_bodydata_tab_left"
+            android:gravity="center"
+            android:text="@string/intelligent_detection"
+            android:textColor="@color/a01ui_a21draw_chart_ownpaint_bodydata_tab_text_color" />
+
+        <TextView
+            android:id="@+id/bpd_miTv"
+            android:layout_width="110dp"
+            android:layout_height="34dp"
+            android:textSize="15dp"
+            android:background="@drawable/a01ui_a21draw_chart_ownpaint_bodydata_tab_right"
+            android:gravity="center"
+            android:text="@string/manual_input"
+            android:textColor="@color/a01ui_a21draw_chart_ownpaint_bodydata_tab_text_color" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/bpd_containerFl"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+    </FrameLayout>
+
+</LinearLayout>

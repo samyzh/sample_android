@@ -1,0 +1,162 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/history_bg_color"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/hr_top"
+        layout="@layout/view_a01ui_a21draw_chart_ownpaint_bodydata_home_right_top" />
+
+    <include
+        android:id="@+id/tabs_view_layout"
+        layout="@layout/view_a01ui_a21draw_chart_ownpaint_bodydata_tabs" >
+    </include>
+
+    <include
+        android:id="@+id/date_switch_view_layout"
+        layout="@layout/view_a01ui_a21draw_chart_ownpaint_bodydata_date_switch_layout" >
+    </include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.3"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="20dp"
+        android:paddingTop="20dp" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/blood_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="@string/blood_pressure_data"
+                android:textColor="@color/blood_pressure_data"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/blood_title_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/blood_pressure_unit"
+                android:textColor="@color/blood_pressure_unit"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="10dp"
+                android:background="@color/systolic_pressure_color" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/systolic_pressure"
+                android:textColor="@color/blood_pressure_unit"
+                android:textSize="9sp" />
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@color/diastolic_pressure_color" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/diastolic_pressure"
+                android:textColor="@color/blood_pressure_unit"
+                android:textSize="9sp" />
+        </LinearLayout>
+
+        <com.zsy.frame.sample.control.android.a01ui.a21draw_chart.ownpaint.views.BPDataCurveGraphView
+            android:id="@+id/bloodCurveView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/blood_title"
+            android:layout_margin="5dip"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="30dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="20dp"
+        android:paddingTop="30dp" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/heart_rate_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="@string/heart_rate_data"
+                android:textColor="@color/blood_pressure_data"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/heart_rate_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/blood_pressure_unit"
+                android:textColor="@color/blood_pressure_unit"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="10dp"
+                android:background="@color/heart_rate_color" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/heart_rate_data"
+                android:textColor="@color/blood_pressure_unit"
+                android:textSize="9sp" />
+        </LinearLayout>
+
+        <com.zsy.frame.sample.control.android.a01ui.a21draw_chart.ownpaint.views.CurveGraphView
+            android:id="@+id/heartRateCurveView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/heart_rate_title"
+            android:layout_margin="5dip"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" />
+    </LinearLayout>
+
+</LinearLayout>

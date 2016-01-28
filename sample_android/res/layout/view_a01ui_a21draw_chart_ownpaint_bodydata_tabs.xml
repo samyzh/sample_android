@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zsy.frame.sample.control.android.a01ui.a21draw_chart.ownpaint.views.TabSwitchView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="36dp"
+    android:orientation="horizontal"
+    android:gravity="center_horizontal"
+    android:layout_marginTop="11dp"
+    android:layout_marginBottom="14dp">
+
+    <TextView
+        android:layout_width="83dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/a01ui_a21draw_chart_ownpaint_bodydata_tab_left"
+        android:text="@string/day"
+        android:clickable="true"
+        android:gravity="center"
+       android:textColor="@color/a01ui_a21draw_chart_ownpaint_bodydata_tab_text_color" />
+    <TextView
+        android:layout_width="83dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/a01ui_a21draw_chart_ownpaint_bodydata_tab_middle"
+        android:text="@string/week"
+        android:clickable="true"
+        android:textColor="@color/a01ui_a21draw_chart_ownpaint_bodydata_tab_text_color"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="83dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/a01ui_a21draw_chart_ownpaint_bodydata_tab_right"
+        android:text="@string/month"
+        android:clickable="true"
+        android:textColor="@color/a01ui_a21draw_chart_ownpaint_bodydata_tab_text_color"
+        android:gravity="center"/>
+</com.zsy.frame.sample.control.android.a01ui.a21draw_chart.ownpaint.views.TabSwitchView>

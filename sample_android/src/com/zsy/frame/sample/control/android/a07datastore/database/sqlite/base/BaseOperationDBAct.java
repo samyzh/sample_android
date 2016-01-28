@@ -1,0 +1,16 @@
+package com.zsy.frame.sample.control.android.a07datastore.database.sqlite.base;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+import com.zsy.frame.sample.R;
+
+public class BaseOperationDBAct extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_a07datastore_database_sqlite_baseoperationdb);
+	}
+
+}

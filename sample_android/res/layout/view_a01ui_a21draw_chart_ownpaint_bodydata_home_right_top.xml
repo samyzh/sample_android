@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:background="@color/top_bar_color"
+    android:layout_height="45dp" >
+    
+    <TextView 
+        android:id="@+id/hrtlTv"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"/>
+    
+    <TextView 
+        android:id="@+id/hrtcTv"
+        android:textSize="22.5sp"
+        android:textColor="@color/white"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"/>
+    
+    <TextView 
+        android:id="@+id/hrtrTv"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"/>
+
+</RelativeLayout>

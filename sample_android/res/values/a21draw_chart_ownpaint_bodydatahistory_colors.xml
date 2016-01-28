@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="top_bar_color">#26c2cf</color>
+    <color name="tab_text_select">#27c2d0</color>
+    <color name="black">#222222</color>
+    <color name="blood_pressure_data">#FF27c2d0</color>
+    <color name="blood_pressure_unit">#FF959595</color>
+    <color name="history_bg_color">#FFf3f3f3</color>
+    <color name="grey">#959595</color>
+    
+    <color name="systolic_pressure_color">#FF47d531</color>
+    <!-- //收缩压颜色 -->
+    <color name="diastolic_pressure_color">#FF02b1f2</color>
+    <!-- //舒张压颜色 -->
+    <color name="heart_rate_color">#FFd770ff</color>
+    <!-- //心率颜色 -->
+    <color name="curve_line">#FFababab</color>
+    <!-- 曲线图中x轴和y轴线条颜色 -->
+    <color name="curve_bg_color">#FFebf3f5</color>
+    <!-- 曲线图中x轴和y轴线条颜色 -->
+    <color name="sleep_light_color">#FF9bd1f5</color>
+    <!-- 浅睡颜色 -->
+    <color name="sleep_deep_color">#FFd9d7cb</color>
+    <!-- 深睡颜色 -->
+    <color name="practical_steps_color">#FF47d62f</color>
+    <!-- 实际步数颜色 -->
+    <color name="target_steps_color">#FFffab0a</color>
+    <!-- 目标步数颜色 -->
+    <color name="steps_count_color">#FF27c3d2</color>
+    <!-- 总步数颜色 -->
+    <color name="bodydata_sober_color">#FF447074</color>
+    <!-- 身体数据，清醒字体颜色 -->
+    
+    
+
+</resources>

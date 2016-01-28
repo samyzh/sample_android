@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zsy.frame.sample.control.android.a26setting.bluetooth.projects.bloodpressure.views.BPDetectView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="278dp"
+    android:paddingBottom="24dp"
+    android:paddingTop="24dp" >
+
+    <com.zsy.frame.sample.control.android.a26setting.bluetooth.projects.bloodpressure.views.ScaleDiskView
+        android:id="@+id/blood_scaleDiskView"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:layout_gravity="center_horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/blood_data_text"
+            android:layout_width="wrap_content"
+            android:layout_height="140dp"
+            android:gravity="center"
+            android:text="@string/blood_detect_before_above_tip"
+            android:textColor="@color/white"
+            android:textSize="32dp" />
+
+        <ImageView
+            android:id="@+id/blood_divider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/a26setting_bluetooth_projects_bloodpressure_divider" />
+
+        <TextView
+            android:id="@+id/blood_tip_text"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/blood_detect_before_below_tip"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+</com.zsy.frame.sample.control.android.a26setting.bluetooth.projects.bloodpressure.views.BPDetectView>

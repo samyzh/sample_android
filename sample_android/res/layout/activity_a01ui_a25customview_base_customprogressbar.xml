@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:samy="http://schemas.android.com/apk/res/com.zsy.frame.sample"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CustomProgressBarAct" >
+
+    <com.zsy.frame.sample.control.android.a01ui.a25customview.base.views.CustomProgressBar
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        samy:circleWidth="15dp"
+        samy:firstColor="#D4F668"
+        samy:secondColor="#2F9DD2"
+        samy:speed="20" />
+
+    <com.zsy.frame.sample.control.android.a01ui.a25customview.base.views.CustomProgressBar
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        samy:circleWidth="24dp"
+        samy:firstColor="#16A3FA"
+        samy:secondColor="#D20F02"
+        samy:speed="10" />
+
+</RelativeLayout>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tween动画是操作某个控件让其展现出旋转、渐变、移动、缩放的这么一种转换过程，我们成为补间动画。我们可以以XML形式定义动画，也可以编码实现。 -->
+<!-- 如果以XML形式定义一个动画，我们按照动画的定义语法完成XML，并放置于/res/anim目录下，文件名可以作为资源ID被引用；如果由编码实现，我们需要使用到Animation对象。 -->
+<!-- <set>是一个动画容器，管理多个动画的群组，与之相对应的Java对象是AnimationSet;它有两个属性，android:interpolator和 android:shareInterpolator -->
+<!-- android:interpolator代表一个插值器资源，可以引用系统自带插值器资源，也可以用自定义插值器资源，默认值是匀速插值器；稍后我会对插值器做出详细讲解。 -->
+<!-- android:shareInterpolator代表<set>里面的多个动画是否要共享插值器，默认值为true，即共享插值器，如果设置为false，那么<set>的插值器就不再起作用，我们要在每个动画中加入插值器 -->
+<!-- 在动画中，如果我们添加了android:fillAfter="true"后，这个动画执行完之后保持最后的状态；android:duration="integer"代表动画持续的时间，单位为毫秒。 -->
+<!-- 其中android:startOffset="3000"  表示延迟3秒后再执行。 如果去掉其中的 android:startOffset="3000" ， 你就什么效果也看不到了。 因为两个动画会同时播放。 -->
+<set xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- 这个里面设置的是点击图片时放到的效果 -->
+    <set>
+        <scale
+            android:duration="300"
+            android:fromXScale="1.0"
+            android:fromYScale="1.0"
+            android:pivotX="50.0%"
+            android:pivotY="50.0%"
+            android:toXScale="1.4"
+            android:toYScale="1.4" />
+        <scale
+            android:duration="300"
+            android:fromXScale="1.4"
+            android:fromYScale="1.4"
+            android:pivotX="50.0%"
+            android:pivotY="50.0%"
+            android:startOffset="300"
+            android:toXScale="1.0"
+            android:toYScale="1.0" />
+    </set>
+    <set>
+                <!-- <scale>是缩放动画 ,可以实现动态调控件尺寸的效果，与之对应的Java对象是ScaleAnimation -->
+        <!-- android:fromXScale属性代表起始的X方向上相对自身的缩放比例，浮点值，比如1.0代表自身无变化，0.5代表起始时缩小一倍，2.0代表放大一倍； -->
+        <!-- android:fromYScale属性代表起始的Y方向上相对自身的缩放比例，浮点值； -->
+        <!-- android:toXScale属性代表结尾的X方向上相对自身的缩放比例，浮点值； -->
+        <!-- android:toYScale属性代表结尾的Y方向上相对自身的缩放比例，浮点值； -->
+        <!-- android:pivotX属性代表缩放的中轴点X坐标，浮点值，android:pivotY属性代表缩放的中轴点Y坐标，浮点值，对于这两个属性，如果我们想表示中轴点为图像的中心，我们可以把两个属性值定义成0.5或者50%。 -->
+        <!--
+      尺寸伸缩动画效果 scale
+       属性：interpolator 指定一个动画的插入器
+        在我试验过程中，使用android.res.anim中的资源时候发现
+        有三种动画插入器:
+            accelerate_decelerate_interpolator  加速-减速 动画插入器
+            accelerate_interpolator         加速-动画插入器
+            decelerate_interpolator         减速- 动画插入器
+        其他的属于特定的动画效果
+      浮点型值：
+            fromXScale 属性为动画起始时 X坐标上的伸缩尺寸   
+            toXScale   属性为动画结束时 X坐标上的伸缩尺寸    
+            fromYScale 属性为动画起始时Y坐标上的伸缩尺寸   
+            toYScale   属性为动画结束时Y坐标上的伸缩尺寸   
+            说明:
+                 以上四种属性值   
+                    0.0表示收缩到没有
+                    1.0表示正常无伸缩    
+                    值小于1.0表示收缩 
+                    值大于1.0表示放大
+            pivotX     属性为动画相对于物件的X坐标的开始位置
+            pivotY     属性为动画相对于物件的Y坐标的开始位置
+            说明:
+                    以上两个属性值 从0%-100%中取值
+                    50%为物件的X或Y方向坐标上的中点位置
+        长整型值：
+            duration  属性为动画持续时间
+            说明:   时间以毫秒为单位
+        布尔型值:
+            fillAfter 属性 当设置为true ，该动画转化在动画结束后被应用
+
+        -->
+        <scale
+            android:duration="700"
+            android:fromXScale="1.0"
+            android:fromYScale="1.0"
+            android:pivotX="50.0%"
+            android:pivotY="50.0%"
+            android:startOffset="600"
+            android:toXScale="0.4"
+            android:toYScale="0.4" />
+
+        <!-- <translate>是位移动画，代表一个水平、垂直的位移。与之对应的Java对象是TranslateAnimation -->
+        <!-- android:fromXDelta属性代表起始X方向的位置，android:toXDelta代表结尾X方向上的位置， -->
+        <!-- android:fromYScale属性代表起始Y方向上的位置，android:toYDelta属性代表结尾Y方向上的位置， -->
+        <!-- 以上四个属性都支持三种表示方式：浮点数、num%、num%p； -->
+        <!-- 如果以浮点数字表示，代表相对自身原始位置的像素值；如果以num%表示，代表相对于自己的百分比，比如toXDelta定义为100%就表示在X方向上移动自己的1倍距离；如果以num%p表示，代表相对于父类组件的百分比。 -->
+        <!--
+        translate 位置转移动画效果
+        整型值:
+            fromXDelta 属性为动画起始时 X坐标上的位置   
+            toXDelta   属性为动画结束时 X坐标上的位置
+            fromYDelta 属性为动画起始时 Y坐标上的位置
+            toYDelta   属性为动画结束时 Y坐标上的位置
+            注意:
+                     没有指定fromXType toXType fromYType toYType 时候，
+                     默认是以自己为相对参照物            
+        长整型值：
+            duration  属性为动画持续时间
+            说明:   时间以毫秒为单位        -->
+        <translate
+            android:duration="700"
+            android:fromXDelta="0.0"
+            android:fromYDelta="0.0"
+            android:startOffset="600"
+            android:toXDelta="75.0%p"
+            android:toYDelta="-109.99756%p" />
+        <!-- <alpha>是渐变动画  可以实现fadeIn和fadeOut的效果 ,与之对应的Java对象是AlphaAnimation -->
+        <!-- android:fromAlpha属性代表起始alpha值，浮点值，范围在0.0和1.0之间，分别代表透明和完全不透明，android:toAlpha属性代表结尾alpha值，浮点值，范围也在0.0和1.0之间 -->
+        <!--
+        透明度控制动画效果 alpha
+        浮点型值：
+            fromAlpha 属性为动画起始时透明度
+            toAlpha   属性为动画结束时透明度
+            说明:
+                0.0表示完全透明
+                1.0表示完全不透明
+            以上值取0.0-1.0之间的float数据类型的数字
+        长整型值：
+            duration  属性为动画持续时间
+            说明:    
+                时间以毫秒为单位        -->
+        <alpha
+            android:duration="700"
+            android:fromAlpha="1.0"
+            android:startOffset="600"
+            android:toAlpha="0.1" />
+        <!-- <rotate>是旋转动画 ,与之对应的Java对象是RotateAnimation -->
+        <!-- android:fromDegrees属性代表起始角度，浮点值，单位：度；android:toDegrees属性代表结尾角度，浮点值，单位：度； -->
+        <!-- android:pivotX属性代表旋转中心的X坐标值，android:pivotY属性代表旋转中心的Y坐标值 -->
+        <!-- 这两个属性也有三种表示方式，数字方式代表相对于自身左边缘的像素值，num%方式代表相对于自身左边缘或顶边缘的百分比，num%p方式代表相对于父容器的左边缘或顶边缘的百分比。 -->
+        <!--
+       rotate 旋转动画效果
+       属性：interpolator 指定一个动画的插入器
+             在我试验过程中，使用android.res.anim中的资源时候发现
+             有三种动画插入器:
+                accelerate_decelerate_interpolator    加速-减速 动画插入器
+                accelerate_interpolator                加速-动画插入器
+                decelerate_interpolator                减速- 动画插入器
+             其他的属于特定的动画效果
+       浮点数型值:
+            fromDegrees 属性为动画起始时物件的角度   
+            toDegrees   属性为动画结束时物件旋转的角度 可以大于360度  
+            说明:
+                     当角度为负数——表示逆时针旋转
+                     当角度为正数——表示顺时针旋转             
+                     (负数from——to正数:顺时针旋转)  
+                     (负数from——to负数:逆时针旋转)
+                     (正数from——to正数:顺时针旋转)
+                     (正数from——to负数:逆时针旋转)      
+            pivotX     属性为动画相对于物件的X坐标的开始位置
+            pivotY     属性为动画相对于物件的Y坐标的开始位置
+ 
+            说明:        以上两个属性值 从0%-100%中取值
+                         50%为物件的X或Y方向坐标上的中点位置
+        长整型值：
+            duration  属性为动画持续时间
+            说明:       时间以毫秒为单位
+        -->
+        <rotate />
+    </set>
+
+</set>

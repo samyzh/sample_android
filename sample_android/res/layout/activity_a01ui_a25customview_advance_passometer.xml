@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    tools:context=".PedometerAct" >
+<!--  没有自定义属性，所以没有引入包名-->
+  <!-- 没有引入包名引入 xmlns:custom="http://schemas.android.com/apk/res/com.zsy.frame.sample"我们的命名空间，后面的包路径指的是项目的package -->
+    <com.zsy.frame.sample.control.android.a01ui.a25customview.advance.views.CircleBar
+        android:id="@+id/circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+    <EditText
+        android:id="@+id/setnum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入步数"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/setnumbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="设置步数" />
+
+</LinearLayout>

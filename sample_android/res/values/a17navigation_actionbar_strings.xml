@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">navigation.actionbar</string>
+    <string name="action_search">搜索</string>
+    <string name="action_plus">功能</string>
+    <string name="action_album">我的相册</string>
+    <string name="action_collection">我的收藏</string>
+    <string name="action_card">我的银行卡</string>
+    <string name="action_settings">设置</string>
+    <string name="action_feed">意见反馈</string>
+    <string name="plus_group_chat">发起群聊</string>
+    <string name="plus_add_friend">添加朋友</string>
+    <string name="plus_video_chat">视频聊天</string>
+    <string name="plus_scan">扫一扫</string>
+    <string name="plus_take_photo">拍照分享</string>
+    <string name="action_share">Share</string>
+    <string name="action_samy">action_samy</string>
+    <string name="action_label_search">Search</string>
+    <string name="action_label_refresh">Refresh</string>
+    <string name="action_label_collected">Collected</string>
+
+    <string-array name="spinner">
+        <item>spinner1</item>
+        <item>spinner2</item>
+        <item>spinner3</item>
+    </string-array>
+    
+  <string name="title_list">ListView</string>
+    <string name="title_views">Views</string>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <!-- 扫描start -->
+    <string name="scan_text">扫描框对准二维码, 即可自动扫描</string>
+    <string name="scan_nonet_text">当前网络不可用</string>
+    <string name="scan_nonet_check">请检查网络设置</string>
+    <!-- 扫描end -->
+</resources>

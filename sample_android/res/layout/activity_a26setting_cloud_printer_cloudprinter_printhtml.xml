@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/a26setting_cloud_printer_cloudprinter_man"
+        android:layout_weight="0.43" />
+
+    <Button
+        android:id="@+id/btnprinthtml"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:text="print bitmap" />
+      <Button
+        android:id="@+id/btnprintpdf"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:text="print pdf" />
+
+</LinearLayout>

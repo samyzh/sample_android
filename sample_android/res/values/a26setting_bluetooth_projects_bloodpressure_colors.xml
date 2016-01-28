@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bottom_bg_color">#f1f1f1</color>
+    <color name="email_register_color">#00b1bb</color>
+     <color name="blood_dection_value_color">#0094a2</color>
+</resources>

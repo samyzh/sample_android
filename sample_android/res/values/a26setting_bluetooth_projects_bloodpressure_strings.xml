@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="individual_center">个人中心</string>
+    <string name="decetion_blood_pressure">血压检测</string>
+    <string name="task_training">任务训练</string>
+    <string name="body_data">身体数据</string>
+    <string name="health_information">健康资讯</string>
+    <string name="setting_center">设置中心</string>
+    
+    <!-- blood pressure -->
+    <string name="blood_pressure">血压</string>
+    <string name="history">历史</string>
+    <string name="intelligent_detection">智能检测</string>
+    <string name="start">开始</string>
+    <string name="not_measuring">您还没有测量过呢，来试一试吧！</string>
+    <string name="manual_input">手动输入</string>
+    <string name="systolic_blood_pressure">收缩压</string>
+    <string name="diastolic_blood_pressure">舒张压</string>
+    <string name="heart_rate">心率</string>
+    <string name="pressure_unit">/mmHg</string>
+    <string name="heart_rate_unit">/bpm</string>
+    <string name="confirm_data">确认数据</string>
+    <string name="dection_normal">您的血压测量值正常，为了更好的保持，来完成您的健康任务吧。</string>
+    <string name="dection_exec">血压检测中，我们会根据您的血压值提供完善的健康控制方案。</string>
+    <string name="pls_input_systolic">请输入您的收缩压！</string>
+    <string name="pls_input_diastolic">请输入您的舒张压！</string>
+    <string name="pls_input_heart">请输入您的心率！</string>
+    <string name="blood_detecting_tip">正在检测，请保持手臂平稳......</string>
+    <string name="blood_detect_before_above_tip">准备好了吗？</string>
+    <string name="blood_detect_before_below_tip">绑好臂带，开启血压计，开始测量吧！</string>
+    <string name="blood_detect_complete_result_mild">轻度性\n高血压</string>
+    <string name="blood_detect_complete_result_moderate">中度性\n高血压</string>
+    <string name="blood_detect_complete_result_height">高度性\n高血压</string>
+    <string name="blood_detect_save_data">保存数据</string>
+    <string name="blood_detect_data_saved">已保存</string>
+
+</resources>

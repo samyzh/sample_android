@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>惠卡宝</title>
+<meta name="keywords" content="惠信，惠信商家" />
+<meta name="description" content="惠信，惠信商家" />
+<style>
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:normal;}
+.hkb-detail-banner{ background:url(images/hkb-detail-banner.jpg) no-repeat; width:640px; height:560px; position:relative;}
+.hkb-detail-banner a{ position:absolute; left:40px; top:356px; background:url(images/hkb-button.gif) no-repeat; width:226px; height:57px;}
+.hkb-detail-banner a:hover{ background:url(images/hkb-button-h.gif) no-repeat; width:226px; height:57px;}
+.hkb-detail-01{ background:url(images/hkb-detail-01.jpg) no-repeat; width:640px; height:373px;}
+.hkb-detail-02{ background:url(images/hkb-detail-02.jpg) no-repeat; width:640px; height:308px;}
+.hkb-detail-03{ background:url(images/hkb-detail-03.jpg) no-repeat; width:640px; height:308px;}
+.hkb-detail-04{ background:url(images/hkb-detail-04.jpg) no-repeat; width:640px; height:467px;}
+</style>
+</head>
+
+<body>
+<div class="hkb-detail-banner"><a id='click_ty' href="javascript:;"></a></div>
+<div class="hkb-detail-01"></div>
+<div class="hkb-detail-02"></div>
+<div class="hkb-detail-03"></div>
+<div class="hkb-detail-04"></div>
+<script>
+ document.getElementById('click_ty').onclick=function(){
+		var href=window.location.href;
+        
+        var ua = navigator.userAgent.toLowerCase();
+        if (/iphone|ipad|ipod/.test(ua)) {
+            window.location.href='?method=aa&value=oo';
+        }
+        else {
+            getJumpTy();
+        }
+        
+        
+        /**
+		 if(href.indexOf('ck')>-1)return;
+            var timestamp1 = Date.parse(new Date());
+			if(href.indexOf('?')>-1)
+			window.location.href=href+'&ck=';
+			else
+			window.location.href=href+'?ck=aa&temp='+timestamp1;
+         **/
+	}
+
+function getJumpTy(){
+    javascript:huixinMember.jumpToPage("experienceHKB");
+}
+</script>
+</body>
+</html>

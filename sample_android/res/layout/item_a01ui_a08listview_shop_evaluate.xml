@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="vertical"
+     >
+	<TextView 
+	    android:visibility="gone"
+	    android:id="@+id/evaluteHeaderTv"
+	    android:layout_width="match_parent"
+	    android:background="#ffeef1f1"
+	    android:text="第三期评价(23条)"
+	    android:textColor="#ff969696"
+	    android:textSize="12sp"
+	    android:paddingTop="7dp"
+	    android:paddingBottom="7dp"
+	    android:paddingLeft="15dp"
+	    android:gravity="center_vertical"
+	    android:layout_height="wrap_content"/>
+    <RelativeLayout
+        android:layout_marginTop="13dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:id="@+id/dish_evaluate_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <RatingBar
+            android:id="@+id/comment_level_rb"
+            style="@style/MySmallRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:isIndicator="true"
+            android:rating="4"
+            android:stepSize="1.0" />
+
+        <TextView
+            android:id="@+id/comment_dt_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="26dp"
+            android:text="2014-09-12"
+            android:textColor="#797979"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/comment_user_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/comment_dt_tv"
+            android:text="谁****谁"
+            android:textColor="#222222"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:id="@+id/comment_content_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:text="samyfdsafdsafsdafdsafdsafdsafdsafdfsadfdkslkfjsdfsa费的方式的方式答复士大夫的说法放到沙发上的发生地方的撒"
+        android:textColor="#161616"
+        android:textSize="14sp" />
+
+</LinearLayout>

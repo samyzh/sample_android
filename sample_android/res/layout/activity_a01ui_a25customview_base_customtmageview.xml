@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:samy="http://schemas.android.com/apk/res/com.zsy.frame.sample"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_bright"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:src="@drawable/a01ui_a25customview_base_customtmageview_icon" />
+
+            <com.zsy.frame.sample.control.android.a01ui.a25customview.base.views.CustomImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                samy:src="@drawable/a01ui_a25customview_base_customtmageview_icon"
+                samy:type="circle" />
+
+            <com.zsy.frame.sample.control.android.a01ui.a25customview.base.views.CustomImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                samy:borderRadius="10dp"
+                samy:src="@drawable/a01ui_a25customview_base_customtmageview_icon"
+                samy:type="round" />
+
+            <com.zsy.frame.sample.control.android.a01ui.a25customview.base.views.CustomImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                samy:borderRadius="20dp"
+                samy:src="@drawable/a01ui_a25customview_base_customtmageview_icon"
+                samy:type="round" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
