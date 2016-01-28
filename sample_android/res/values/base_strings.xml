@@ -30,6 +30,7 @@
     <string name="android.a01ui.a20animation.base.RotateActivity">android/a01ui/a20animation/base/RotateActivity</string>
     <string name="android.a01ui.a20animation.base.ScaleActivity">android/a01ui/a20animation/base/ScaleActivity</string>
     <string name="android.a01ui.a20animation.base.TranslateActivity">android/a01ui/a20animation/base/TranslateActivity</string>
+    <string name="android.a01ui.a20animation.advance.AnimationAdvanceMainAct">android/a01ui/a20animation/advance/AnimationAdvanceMainAct</string>
     <string name="android.a01ui.a21draw_chart.mpandroidchart.TradelettersAct">android/a01ui/a21draw_chart/mpandroidchart/TradelettersAct</string>
     <string name="android.a01ui.a21draw_chart.mpandroidchart.LineChartAct">android/a01ui/a21draw_chart/mpandroidchart/LineChartAct</string>
     <string name="android.a01ui.a21draw_chart.achartengine.BarPieChartAct">android/a01ui/a21draw_chart/achartengine/BarPieChartAct</string>

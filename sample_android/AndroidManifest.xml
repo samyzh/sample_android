@@ -420,6 +420,20 @@
                 <category android:name="android.intent.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
+        
+                <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a20animation.advance.AnimationAdvanceMainAct"
+            android:label="@string/android.a01ui.a20animation.advance.AnimationAdvanceMainAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.zsy.frame.sample.control.android.a01ui.a20animation.advance.tween.AllTweenAct"/>
+        <activity android:name="com.zsy.frame.sample.control.android.a01ui.a20animation.advance.tween.ShowMainAct"/>
+        <activity android:name="com.zsy.frame.sample.control.android.a01ui.a20animation.advance.tween.ShowTweenAct"/>
+                        
         <activity
             android:name="com.zsy.frame.sample.control.android.a01ui.a21draw_chart.mpandroidchart.TradelettersAct"
             android:label="@string/android.a01ui.a21draw_chart.mpandroidchart.TradelettersAct"

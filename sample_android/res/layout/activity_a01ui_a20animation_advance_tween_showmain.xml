@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <CheckBox
+            android:id="@+id/detachWallpaper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="detachWallpaper" />
+
+        <EditText
+            android:id="@+id/duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="duration,default 3000ms"
+            android:inputType="numberSigned" />
+
+        <CheckBox
+            android:id="@+id/fillAfter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fillAfter" />
+
+        <CheckBox
+            android:id="@+id/fillBefore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fillBefore" />
+
+        <EditText
+            android:id="@+id/repeatCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="repeatCount,default 0"
+            android:inputType="numberSigned" />
+
+        <CheckBox
+            android:id="@+id/repeatMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="repeatMode" />
+
+        <EditText
+            android:id="@+id/fromAlpha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="fromAlpha,default 1"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/toAlpha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="toAlpha,default 0"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/fromDegrees"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="fromDegrees,default 0"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/toDegrees"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="toDegrees,default 360"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/pivotX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="pivotX,default 0"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/pivotY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="pivotY,default 0"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/fromXScale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="fromXScale,default 1"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/toXScale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="toXScale,default 0.5"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/fromYScale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="fromYScale,default 1"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/toYScale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="toYScale,default 0.5"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/fromXDelta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="fromXDelta,default 0"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/toXDelta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="toXDelta,default 100"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/fromYDelta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="fromYDelta,default 0"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/toYDelta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="toYDelta,default 0"
+            android:inputType="numberDecimal" />
+    </LinearLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+
+    >
+    <ImageView
+        android:id="@+id/example"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_launcher"
+        />
+
+</RelativeLayout>
+
+
+    <RadioGroup
+        android:id="@+id/chooseanim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/alpha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+
+            android:text="alpha" />
+
+        <RadioButton
+            android:id="@+id/rotate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="rotate" />
+
+        <RadioButton
+            android:id="@+id/scale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="scale" />
+
+        <RadioButton
+            android:id="@+id/translate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="translate" />
+    </RadioGroup>
+
+</RelativeLayout>
