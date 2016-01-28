@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/composer_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/a01ui_a20animation_base_property_path_composer_camera" />
+
+    <ImageView
+        android:id="@+id/composer_music"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/a01ui_a20animation_base_property_path_composer_music" />
+
+    <ImageView
+        android:id="@+id/composer_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/a01ui_a20animation_base_property_path_composer_place" />
+
+    <ImageView
+        android:id="@+id/composer_sleep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/a01ui_a20animation_base_property_path_composer_sleep" />
+
+    <ImageView
+        android:id="@+id/composer_thought"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/a01ui_a20animation_base_property_path_composer_thought" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_gravity="right"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
+</FrameLayout>

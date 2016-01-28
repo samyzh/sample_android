@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/piechart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_launcher" />
+
+    <Button
+        android:id="@+id/positive"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="positive"
+        android:text="顺时针" />
+
+    <Button
+        android:id="@+id/negative"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="negative"
+        android:text="逆时针" />
+
+</LinearLayout>
