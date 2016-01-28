@@ -2,7 +2,7 @@
 
     <!-- <string name="app_name">SYFrame</string> -->
     <string name="app_name">SYFrameSample</string>
-   <string name="common_loading">加载中</string>
+    <string name="common_loading">加载中</string>
     <string name="android.a01ui.a03textview.HtmlTextViewAct">android/a01ui/a03textview/HtmlTextViewAct</string>
     <string name="android.a01ui.a07viewpager.JazzyViewPagerAct">android/a01ui/a07viewpager/JazzyViewPagerAct</string>
     <string name="android.a01ui.a07viewpager.JellyViewPagerAct">android/a01ui/a07viewpager/JellyViewPagerAct</string>
@@ -22,6 +22,14 @@
     <string name="android.a01ui.a19progress.CircleProgressViewPagerAct">android/a01ui/a19progress/CircleProgressViewPagerAct</string>
     <string name="android.a01ui.a19progress.NumberProgressBarAct">android/a01ui/a19progress/NumberProgressBarAct</string>
     <string name="android.a01ui.a20animation.base.TweenAnimationAct">android/a01ui/a20animation/base/TweenAnimationAct</string>
+    <string name="android.a01ui.a20animation.base.AlphaActivity">android/a01ui/a20animation/base/AlphaActivity</string>
+    <string name="android.a01ui.a20animation.base.FrameActivity">android/a01ui/a20animation/base/FrameActivity</string>
+    <string name="android.a01ui.a20animation.base.PropertyCounterAct">android/a01ui/a20animation/base/PropertyCounterAct</string>
+    <string name="android.a01ui.a20animation.base.PropertyFirstAct">android/a01ui/a20animation/base/PropertyFirstAct</string>
+    <string name="android.a01ui.a20animation.base.PropertyPathAct">android/a01ui/a20animation/base/PropertyPathAct</string>
+    <string name="android.a01ui.a20animation.base.RotateActivity">android/a01ui/a20animation/base/RotateActivity</string>
+    <string name="android.a01ui.a20animation.base.ScaleActivity">android/a01ui/a20animation/base/ScaleActivity</string>
+    <string name="android.a01ui.a20animation.base.TranslateActivity">android/a01ui/a20animation/base/TranslateActivity</string>
     <string name="android.a01ui.a21draw_chart.mpandroidchart.TradelettersAct">android/a01ui/a21draw_chart/mpandroidchart/TradelettersAct</string>
     <string name="android.a01ui.a21draw_chart.mpandroidchart.LineChartAct">android/a01ui/a21draw_chart/mpandroidchart/LineChartAct</string>
     <string name="android.a01ui.a21draw_chart.achartengine.BarPieChartAct">android/a01ui/a21draw_chart/achartengine/BarPieChartAct</string>

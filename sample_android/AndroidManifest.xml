@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zsy.frame.sample"
-    android:versionCode="100"
-    android:versionName="1.0.0" >
+    android:versionCode="200"
+    android:versionName="2.0.0" >
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -342,6 +342,78 @@
         <activity
             android:name="com.zsy.frame.sample.control.android.a01ui.a20animation.base.TweenAnimationAct"
             android:label="@string/android.a01ui.a20animation.base.TweenAnimationAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a20animation.base.AlphaActivity"
+            android:label="@string/android.a01ui.a20animation.base.AlphaActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a20animation.base.FrameActivity"
+            android:label="@string/android.a01ui.a20animation.base.FrameActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a20animation.base.PropertyCounterAct"
+            android:label="@string/android.a01ui.a20animation.base.PropertyCounterAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a20animation.base.PropertyFirstAct"
+            android:label="@string/android.a01ui.a20animation.base.PropertyFirstAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a20animation.base.PropertyPathAct"
+            android:label="@string/android.a01ui.a20animation.base.PropertyPathAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a20animation.base.RotateActivity"
+            android:label="@string/android.a01ui.a20animation.base.RotateActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a20animation.base.ScaleActivity"
+            android:label="@string/android.a01ui.a20animation.base.ScaleActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a20animation.base.TranslateActivity"
+            android:label="@string/android.a01ui.a20animation.base.TranslateActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

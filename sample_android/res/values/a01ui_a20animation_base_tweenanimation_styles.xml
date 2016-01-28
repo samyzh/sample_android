@@ -18,8 +18,8 @@
     </style>
 
     <style name="anim_menu_bottombar">
-    <item name="android:windowEnterAnimation">@anim/a01ui_a20animation_base_tweenanimation_fade_in</item>
-    <item name="android:windowExitAnimation">@anim/a01ui_a20animation_base_tweenanimation_fade_out</item>
+    <item name="android:windowEnterAnimation">@anim/anim_a01ui_a20animation_base_tweenanimation_fade_in</item>
+    <item name="android:windowExitAnimation">@anim/anim_a01ui_a20animation_base_tweenanimation_fade_out</item>
 </style>
 
 </resources>

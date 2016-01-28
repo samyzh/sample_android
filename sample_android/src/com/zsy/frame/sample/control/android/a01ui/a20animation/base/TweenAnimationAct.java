@@ -63,7 +63,7 @@ public class TweenAnimationAct extends Activity {
 				mAnimImageView.startAnimation(mAnimation);
 			}
 		});
-		mAnimation = AnimationUtils.loadAnimation(this, R.anim.a01ui_a20animation_base_tweenanimation_cart_anim);
+		mAnimation = AnimationUtils.loadAnimation(this, R.anim.anim_a01ui_a20animation_base_tweenanimation_cart_anim);
 		mAnimation.setAnimationListener(new AnimationListener() {
 			@Override
 			public void onAnimationStart(Animation animation) {

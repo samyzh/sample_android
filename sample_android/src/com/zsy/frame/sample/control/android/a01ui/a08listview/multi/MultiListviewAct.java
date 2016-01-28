@@ -81,7 +81,7 @@ public class MultiListviewAct extends FragmentActivity implements OnClickListene
 
 	public void showFragmentMenu() {
 		FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-		fragmentTransaction.setCustomAnimations(R.anim.a01ui_a08listview_multi_short_menu_pop_in, R.anim.a01ui_a08listview_multi_short_menu_pop_out);
+		fragmentTransaction.setCustomAnimations(R.anim.anim_a01ui_a08listview_multi_short_menu_pop_in, R.anim.anim_a01ui_a08listview_multi_short_menu_pop_out);
 		if (cascadingMenuFragment == null) {
 			cascadingMenuFragment = CascadingMenuFragment.getInstance();
 			cascadingMenuFragment.setMenuItems(menuItems);

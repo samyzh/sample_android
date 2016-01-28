@@ -1,7 +1,7 @@
 <resources>
 
     <style name="short_menu_popwin_anim">
-        <item name="android:windowEnterAnimation">@anim/a01ui_a08listview_multi_short_menu_pop_in</item>
-        <item name="android:windowExitAnimation">@anim/a01ui_a08listview_multi_short_menu_pop_out</item>
+        <item name="android:windowEnterAnimation">@anim/anim_a01ui_a08listview_multi_short_menu_pop_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_a01ui_a08listview_multi_short_menu_pop_out</item>
     </style>
 </resources>
