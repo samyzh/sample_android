@@ -16,6 +16,7 @@
     </declare-styleable>
     
     
+    
     <attr name="borderRadius" format="dimension" />
     <attr name="src" format="reference"></attr>
     <attr name="type">
@@ -32,7 +33,7 @@
     <!--
          <attr name="titleText" format="string" />
     <attr name="titleTextColor" format="color" />
-    <attr name="titleTextSize" format="dimension" />
+    <attr name="titleTextSize" format="dimension" />
     -->
     <attr name="image" format="reference" />
     <attr name="imageScaleType">

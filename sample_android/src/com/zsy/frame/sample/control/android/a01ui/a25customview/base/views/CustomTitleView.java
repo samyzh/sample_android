@@ -35,6 +35,7 @@ public class CustomTitleView extends View {
 	private int mTitleTextSize;
 	/** 绘制时控制文本绘制的范围*/
 	private Rect mBound;
+	/**画笔*/
 	private Paint mPaint;
 
 	/**
@@ -132,7 +133,7 @@ public class CustomTitleView extends View {
 	 */
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-		// super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+//		 super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
 		int width = 0;
 		int height = 0;
@@ -154,8 +155,6 @@ public class CustomTitleView extends View {
 		/**
 		 * 设置高度
 		 */
-		specMode = MeasureSpec.getMode(heightMeasureSpec);
-		specSize = MeasureSpec.getSize(heightMeasureSpec);
 		switch (specMode) {
 			case MeasureSpec.EXACTLY:// 明确指定了match_parent , accurate
 				height = getPaddingTop() + getPaddingBottom() + specSize;
@@ -166,8 +165,14 @@ public class CustomTitleView extends View {
 		}
 
 		setMeasuredDimension(width, height);
+		 
 	}
 	
+	
+	
+	/**
+	 * ViewGroup时用到
+	 */
 	@Override
 	protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
 		super.onLayout(changed, left, top, right, bottom);
@@ -176,7 +181,7 @@ public class CustomTitleView extends View {
 	@Override
 	protected void onDraw(Canvas canvas) {
 		/**
-		 * 黄色背景
+		 * 黄色背景;共用画笔
 		 */
 		mPaint.setColor(Color.YELLOW);
 		// // 消除锯齿

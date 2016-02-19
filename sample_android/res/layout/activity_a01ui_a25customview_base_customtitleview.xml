@@ -16,7 +16,7 @@
         android:padding="10dp"
         custom:titleText="3712"
         custom:titleTextColor="#ff00ff"
-        custom:titleTextSize="40sp" />
+        custom:titleTextSize="10sp" />
     <!-- 默认情况下为16sp -->
     <!-- custom:titleTextSize="40sp" /> -->
 

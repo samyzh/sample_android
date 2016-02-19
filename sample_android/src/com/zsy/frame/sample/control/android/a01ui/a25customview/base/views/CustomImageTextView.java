@@ -73,7 +73,6 @@ public class CustomImageTextView extends View {
 
 		for (int i = 0; i < n; i++) {
 			int attr = a.getIndex(i);
-
 			switch (attr) {
 				case R.styleable.CustomImageTextView_titleText:
 					mTitle = a.getString(attr);
@@ -137,6 +136,8 @@ public class CustomImageTextView extends View {
 				int desire = Math.max(desireByImg, desireByTitle);
 				mWidth = Math.min(desire, specSize);
 				Log.e("xxx", "AT_MOST");
+			}else{
+				mWidth = desireByImg;
 			}
 		}
 
@@ -154,6 +155,8 @@ public class CustomImageTextView extends View {
 			if (specMode == MeasureSpec.AT_MOST)// wrap_content
 			{
 				mHeight = Math.min(desire, specSize);
+			}else{
+				mHeight = desire;
 			}
 		}
 		setMeasuredDimension(mWidth, mHeight);
