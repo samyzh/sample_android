@@ -69,7 +69,7 @@ public class LayoutInflateAct extends BaseAct {
 				holder = (ViewHolder) convertView.getTag();
 			}
 
-			holder.mBtn.setText(mDatas.get(position));  //
+			holder.mBtn.setText(mDatas.get(position));  //  
 
 			return convertView;
 		}
