@@ -56,6 +56,7 @@
     <string name="android.a01ui.a27refresh.acitionbarptr.GridViewActivity">android/a01ui/a27refresh/acitionbarptr/GridViewActivity</string>
     <string name="android.a01ui.a27refresh.acitionbarptr.WebViewActivity">android/a01ui/a27refresh/acitionbarptr/WebViewActivity</string>
     <string name="android.a01ui.a27refresh.acitionbarptr.FragmentTabsActivity">android/a01ui/a27refresh/acitionbarptr/FragmentTabsActivity</string>
+    <string name="android.a01ui.a28inflate.LayoutInflateAct">android/a01ui/a28inflate/LayoutInflateAct</string>
     <string name="android.a06fourcomponents.activity.StartMethodAct">android/a06fourcomponents/activity/StartMethodAct</string>
     <string name="android.a06fourcomponents.activity.StartMethodTestAAct">android/a06fourcomponents/activity/StartMethodTestAAct</string>
     <string name="android.a06fourcomponents.activity.StartMethodTestBAct">android/a06fourcomponents/activity/StartMethodTestBAct</string>
