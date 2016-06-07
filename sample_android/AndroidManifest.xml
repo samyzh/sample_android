@@ -62,7 +62,7 @@
     <!-- android:hardwareAccelerated="true"  在自定义播放gif图片是用到，硬件加速请求,现在处理的是直接放在用到的Activity配置 -->
     <!--
    　如果你的应用在全局启用硬加速时行为不正确，你可以对个别activities单独启用硬加速．
-    欲在actvity级别启用或禁止硬加速，你可以对<activity>元素使用android:hardwareAccelerated属性
+    欲在actvity级别启用或禁止硬加速，你可以对<activity>元素使用android:hardwareAccelerated属性
     -->
     <application
         android:name="com.zsy.frame.sample.GlobalApp"
@@ -198,7 +198,7 @@
                 <!-- 所谓Launcher,是指管理桌面的程序.Lanucher列表是指在桌面中显示的应用的列表. -->
                 <!--
     因为你的程序可能有很多个activity只要xml配置文件中有这么一个intent-filter，而且里面有这个launcher，那么这个activity就是点击程序时最先运行的那个activity。
-    现在你只有一个activity，那么加不加就没有关系了。用于模拟器启动时设置为默认打开为的activity
+    现在你只有一个activity，那么加不加就没有关系了。用于模拟器启动时设置为默认打开为的activity
                 -->
                 <!-- <category android:name="android.intent.category.DEFAULT" /> -->
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -207,7 +207,7 @@
 第一种情况：有MAIN,无LAUNCHER，程序列表中无图标
 原因：android.intent.category.LAUNCHER决定应用程序是否显示在程序列表里 
 第二种情况：无MAIN,有LAUNCHER，程序列表中无图标
-原因：android.intent.action.MAIN决定应用程序最先启动的Activity，如果没有Main，则不知启动哪个Activity，故也不会有图标出现
+原因：android.intent.action.MAIN决定应用程序最先启动的Activity，如果没有Main，则不知启动哪个Activity，故也不会有图标出现
                 -->
             </intent-filter>
         </activity>
@@ -607,6 +607,15 @@
             android:label="@string/android.a01ui.a27refresh.acitionbarptr.FragmentTabsActivity"
             android:theme="@android:style/Theme.Holo.Light.DarkActionBar" />
         <activity
+            android:name="com.zsy.frame.sample.control.android.a01ui.a28inflate.LayoutInflateAct"
+            android:label="@string/android.a01ui.a28inflate.LayoutInflateAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="com.zsy.frame.sample.control.android.a06fourcomponents.activity.StartMethodAct"
             android:label="@string/android.a06fourcomponents.activity.StartMethodAct" >
             <intent-filter>
@@ -987,7 +996,7 @@
             <!--
             	如果集成QQ分享，或者使用QQ客户端来进行QQ空间的分享，须要在此处添加一个对ACTION_VIEW
             	事件的过滤器，其中的scheme是“tencent”前缀再开发者应用的加上appId。如果此过滤器不设置，
-            	则分享结束以后不能得到正确的回调
+            	则分享结束以后不能得到正确的回调
             -->
             <intent-filter>
                 <data android:scheme="tencent1103542703" />

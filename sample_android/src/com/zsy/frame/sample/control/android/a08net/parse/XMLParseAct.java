@@ -256,6 +256,7 @@ public class XMLParseAct extends BaseAct {
 			// sax【一步一步的解析，随时可以停止，用于数量巨大的xml，操作复杂，采取回调方案，本例是android修改的sax，采取的是标记手法，俗称pull解析】
 			// 直接获得xml文件中的资源： this.getResources().getXml(R.xml.pull);
 			// 获得TextView节点下的详细信息；
+//			this.getResources().getLayout(id)
 			XmlResourceParser xmlResourceParser = this.getResources().getXml(R.xml.xml_data_pull_activity_a08net_parse_xmlparse);
 			// final XmlResourceParser parser = getResources().getLayout(resource);
 			int eventType = xmlResourceParser.getEventType();
