@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <com.zsy.frame.sample.control.android.a01ui.a25customview.baseadv.views.ItemView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"/>
+
+    <com.zsy.frame.sample.control.android.a01ui.a25customview.baseadv.views.ItemView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"/>
+
+    <com.zsy.frame.sample.control.android.a01ui.a25customview.baseadv.views.ItemView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/a01ui_a25customview_baseadv_selector_item"/>
+</LinearLayout>

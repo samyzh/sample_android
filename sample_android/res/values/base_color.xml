@@ -5,5 +5,8 @@
     <!-- 自定义Loding_Dialog -->
     <color name="bocop_dialog_bg">#77000000</color>
     <color name="white">#ffffff</color>
+    <!--  -->
+    <color name="colorItemNormal">#ffffff</color>
+    <color name="colorItemPressed">#123123</color>
 
 </resources>
