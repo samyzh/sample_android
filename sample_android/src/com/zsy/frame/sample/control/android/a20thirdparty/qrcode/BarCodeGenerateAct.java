@@ -39,7 +39,7 @@ public class BarCodeGenerateAct extends BaseAct {
 	private ImageButton btn_head_left;
 	private ImageButton btnHeadRight;
 
-	// 惠信扫一扫支付
+	// 扫一扫支付
 	public static final String SCAN_HOST_PAY = "hx://pay?showAccount=";
 
 	private BroadcastReceiver pushPayMsgBroadcastReceiver = new BroadcastReceiver() {

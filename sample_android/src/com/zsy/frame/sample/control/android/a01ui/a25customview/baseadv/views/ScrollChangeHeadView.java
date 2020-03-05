@@ -25,12 +25,10 @@ public class ScrollChangeHeadView extends ListView {
 		//List加载一个头部；
 		viewHead = LayoutInflater.from(context).inflate(R.layout.view_activity_a01ui_a25customview_baseadv_scroll_change_head, null);
 		addHeaderView(viewHead);
-
 		setOnScrollListener(new OnScrollListener() {
 			@Override
 			public void onScrollStateChanged(AbsListView view, int scrollState) {
 			}
-
 			@Override
 			public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
 

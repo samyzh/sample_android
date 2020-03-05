@@ -16,7 +16,6 @@ import com.google.zxing.common.BitMatrix;
 
 /**
  * 二维码工具类
- * @author fanxing
  *
  */
 public class QRUtils {

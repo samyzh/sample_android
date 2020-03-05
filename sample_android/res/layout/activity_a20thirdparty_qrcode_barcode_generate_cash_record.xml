@@ -50,7 +50,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="20dp"
                 android:layout_marginTop="45dp"
-                android:text="给惠信顾客扫一扫完成线下收银"
+                android:text="给顾客扫一扫完成线下收银"
                 android:textColor="#666666"
                 android:textSize="12sp" />
 

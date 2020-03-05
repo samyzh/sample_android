@@ -152,6 +152,8 @@ public class CustomTitleView extends View {
 				break;
 		}
 
+		 specMode = MeasureSpec.getMode(heightMeasureSpec);
+		 specSize = MeasureSpec.getSize(heightMeasureSpec);
 		/**
 		 * 设置高度
 		 */

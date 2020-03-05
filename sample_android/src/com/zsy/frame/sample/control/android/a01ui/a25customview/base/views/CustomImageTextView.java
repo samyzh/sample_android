@@ -206,7 +206,7 @@ public class CustomImageTextView extends View {
 			canvas.drawText(mTitle, mWidth / 2 - mTextBound.width() * 1.0f / 2, mHeight - getPaddingBottom(), mPaint);
 		}
 
-		// 取消使用掉的快
+		// 取消使用掉的块
 		rect.bottom -= mTextBound.height();
 
 		/**
