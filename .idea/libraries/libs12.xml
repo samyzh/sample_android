@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="libs1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/sample_android/libs/rebound-core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/sample_android/libs/androidannotations-api-3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/sample_android/libs/RootTools-3.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/sample_android/libs/libammsdk.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
